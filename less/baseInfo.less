@@ -1,0 +1,116 @@
+@charset 'utf-8';
+html,body,.container {
+    height: 100%;
+    width: 100%;
+}
+.user_info {
+    width: 100%;
+    padding-top: 2.5rem;
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+    }
+    p:nth-of-type(1) {
+        text-align: center;
+        font-size: .8rem;
+        margin-top: .8rem;
+        .user_name {
+            color: #393939;
+        }
+        .go_register {
+            color: #036eb8;
+        }
+    }
+    p:nth-of-type(2) {
+        text-align: center;
+        font-size: .8rem;
+        margin-top: .4rem;
+        .uese_tel {
+            color: #036eb8;
+        }
+    }
+}
+.btn_box {
+    margin-top: 6rem;
+    .had_card_id {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #fff;
+        line-height: 2.5rem;
+        border-radius: .3rem;
+        position: relative;      
+        input {
+            color: #393939;
+            font-size: .75rem;
+            height: 2.5rem;
+            width: 100%;
+            padding-left: 1rem;
+            border-radius: .3rem;
+        }
+        span {
+            position: absolute;
+            left: 5.5rem;
+            top: 0;
+            font-size: .75rem;
+            color: #393939;
+        }
+    }
+    .had_bank_id {
+        width: 90%;
+        margin: 0 auto;
+        background-color: #fff;
+        line-height: 2.5rem;
+        border-radius: .3rem;
+        position: relative;   
+        margin-top: 1rem;   
+        input {
+            color: #393939;
+            font-size: .75rem;
+            height: 2.5rem;
+            width: 100%;
+            padding-left: 1rem;
+            border-radius: .3rem;
+        }
+        span {
+            position: absolute;
+            left: 5.5rem;
+            top: 0;
+            font-size: .75rem;
+            color: #393939;
+        }
+    }
+    a {
+        display: block;
+        width: 90%;
+        background-color: #036eb8;
+        line-height: 2.5rem;
+        color: #fff;
+        font-size: .8rem;
+        text-align: center;
+        border-radius: .3rem;
+        margin: 0 auto;
+        &:nth-of-type(2) {
+            margin-top: 1rem;
+        }
+    }
+    .msg_info {
+        padding-left: 10%;
+        margin-top: 1rem;
+        color: #999;
+        font-size: .6rem;
+        position: relative;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        -o-text-overflow:ellipsis; 
+        overflow: hidden;
+        img {
+            position: absolute;
+            left: 5%;
+            top:.1rem;
+            width: .6rem;
+        }
+    }
+}

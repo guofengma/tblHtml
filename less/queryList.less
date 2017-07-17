@@ -1,0 +1,223 @@
+@charset 'utf-8';
+body {
+    background-color: #eaeaea;
+}
+.container {
+    padding: .6rem .6rem 0 .6rem;
+}
+.dateChoose {
+    background-color: #fff;
+    width: 100%;
+    padding-bottom: .8rem;
+    border-radius: .3rem;
+    .date_go {
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+        p {
+            margin-top: .5rem;
+            font-size: .8rem;
+            color: #3a3a3a;
+            &:nth-of-type(2) {
+                color: #686868;
+                font-size: .6rem;
+            }
+        }
+    }
+    #queryBtn {
+        display: block;
+        text-align: center;
+        width: 94%;
+        line-height: 2.5rem;
+        margin: 0 auto;
+        background-color: #036eb8;
+        color: #fff;
+        font-size: .8rem;
+        border-radius: .4rem;
+        margin-top: 1.5rem;
+    }
+}
+.doc_list {
+    margin-top: .5rem;
+    position: relative;
+    .list_title {
+        width: 100%;
+        border: 1px solid #036be8;
+        border-radius: .3rem;
+        .btn_small_box {
+            line-height: 2rem;
+            // width: 100%;
+            overflow: hidden;
+            a {
+                width: 50%;
+                text-align: center;
+                float: left;
+                color: #036be8;
+            }
+            .active {
+                color: #fff;
+                background-color: #036eb8;
+            }
+        }
+    }
+    #addDoc {
+        width: 85%;
+        background-color: #036eb8;
+        text-align: center;
+        display: block;
+        border-radius: .3rem;
+        color: #fff;
+        font-size: .8rem;
+        margin: 0 auto;
+        line-height: 2rem;
+        margin-top: 6rem;
+        position: relative;
+        z-index: 99;
+    }
+    .no_pass {
+        margin-top: 2.5rem;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        .no_pass_say {
+            color: #9d9d9d;
+            border-bottom: 1px solid #e5e5e5;
+            line-height: 1.5rem;
+            padding-left: .5rem;
+        }
+        .list_show {
+            li {
+                height: 3.2rem;
+                border-bottom: 1px solid #e5e5e5;
+                padding-left: .5rem;
+                img {
+                    float: left;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    border-radius: 50%;
+                    margin-top: .5rem;
+                    margin-right: .6rem;
+                }
+                .list_box {
+                    overflow: hidden;
+                    p:nth-of-type(1) {
+                        font-size: .8rem;
+                        color:#393939;
+                        margin-top: .5rem;
+                    }
+                    p:nth-of-type(2) {
+                        font-size: .7rem;
+                        color: #999;
+                        margin-top: .2rem;
+                        white-space:nowrap;
+                        text-overflow:ellipsis;
+                        -o-text-overflow:ellipsis; 
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+    .passed {
+        margin-top: 2.5rem;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        .passed_say {
+            color: #9d9d9d;
+            border-bottom: 1px solid #e5e5e5;
+            line-height: 1.5rem;
+            padding-left: .5rem;
+            i {
+                display: inline-block;
+                margin-right: .4rem;
+            }
+        }
+        .passed_list_show {
+            li {
+                height: 3.2rem;
+                border-bottom: 1px solid #e5e5e5;
+                padding-left: .5rem;
+                padding-right: .5rem;
+                img {
+                    float: left;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    border-radius: 50%;
+                    margin-top: .5rem;
+                    margin-right: .6rem;
+                }
+                .list_box {
+                    overflow: hidden;
+                    p:nth-of-type(1) {
+                        font-size: .8rem;
+                        color:#393939;
+                        margin-top: .5rem;
+                        i {
+                            float:right;
+                            font-size: .7rem;
+                            color:#036db8;
+                        }
+                    }
+                    p:nth-of-type(2) {
+                        font-size: .7rem;
+                        color: #999;
+                        margin-top: .2rem;
+                        white-space:nowrap;
+                        text-overflow:ellipsis;
+                        -o-text-overflow:ellipsis; 
+                        overflow: hidden;
+                        i {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//第三方日期选择器控件样式
+.gearDate {
+    font-family: '微软雅黑' !important;
+    .date_ctrl {
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        width: 90% !important;
+        height: 9.5rem;
+        margin: auto !important;
+        border-radius: .3rem;
+        background-color: #fff;
+        color:#393939;
+        .date_btn_box {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #fff;
+            .date_btn {
+                width: 50%;
+                color: #036eb8;
+                line-height: 1.3rem;
+            }
+            .lcalendar_cancel {
+                color: #666 !important;
+                border-right: 1px solid #e5e5e5;
+            }
+        }
+        .date_roll_mask {
+            .date_roll {
+                background-color: #fff;
+                font-weight: 400;
+            }
+        }
+    }
+}
+.no_five {
+    color:#e02112 !important;
+}
