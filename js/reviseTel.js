@@ -1,5 +1,6 @@
 (function () {
     $(function () {
+        var regPhone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[6780]|18[0-9]|14[57])[0-9]{8}$/;//手机号验证
         $('#telNum').text(getCookie('mobilephone'));
         //弹窗2的弹出内容
         var strLayerTwo = '<p class="sendTel">已向<span>' + getCookie('mobilephone') + '</span>手机号发送验证码</p>'
@@ -61,37 +62,49 @@
                                             , yes: function () {
                                                 //需要修改的手机号码;
                                                 var sureTelNum = $('#reviseTelNum').val();
-                                                $.ajax({
-                                                    url: getPort() + 'employee/updateMobilephone',
-                                                    data: {
-                                                        openId: getCookie('openid'),
-                                                        NewPhone: sureTelNum,
-                                                        messageCode: userCode
-                                                    },
-                                                    type: 'POST',
-                                                    dataType: 'json',
-                                                    success: function (data) {
-                                                        console.log(data);
-                                                        if (data.statusCode == 1) {
-                                                            //第四个弹出（提示手机号修改成功）;
-                                                            layer.open({
-                                                                content: '<p><br /><br /></p>'+data.message + '<p><br /></p>'
-                                                                , btn: '我知道了'
-                                                                , yes: function () {
-                                                                    //修改手机号成功，重新缓存合伙人手机号    
-                                                                    setCookie('mobilephone', sureTelNum);
-                                                                    //跳转至登录页面
-                                                                    window.location.href = './baseInfo.html';
-                                                                }
-                                                            });
-                                                        } else if (data.statusCode == 0) {
-                                                            layer.open({
-                                                                content: '<p><br /><br /></p>'+data.message + '<p><br /></p>'
-                                                                , btn: '我知道了'
-                                                            });
+                                                if (regPhone.test(sureTelNum)) {
+                                                    $.ajax({
+                                                        url: getPort() + 'employee/updateMobilephone',
+                                                        data: {
+                                                            openId: getCookie('openid'),
+                                                            NewPhone: sureTelNum,
+                                                            messageCode: userCode
+                                                        },
+                                                        type: 'POST',
+                                                        dataType: 'json',
+                                                        success: function (data) {
+                                                            console.log(data);
+                                                            if (data.statusCode == 1) {
+                                                                //第四个弹出（提示手机号修改成功）;
+                                                                layer.open({
+                                                                    content: '<p><br /><br /></p>' + data.message + '<p><br /></p>'
+                                                                    , btn: '我知道了'
+                                                                    , yes: function () {
+                                                                        //修改手机号成功，重新缓存合伙人手机号    
+                                                                        setCookie('mobilephone', sureTelNum);
+                                                                        //跳转至登录页面
+                                                                        window.location.href = './baseInfo.html';
+                                                                    }
+                                                                });
+                                                            } else if (data.statusCode == 0) {
+                                                                layer.open({
+                                                                    content: '<p><br /><br /></p>' + data.message + '<p><br /></p>'
+                                                                    , btn: '我知道了'
+                                                                });
+                                                            }
                                                         }
-                                                    }
-                                                });
+                                                    });
+                                                } else {
+                                                    layer.closeAll();
+                                                    layer.open({
+                                                        content: '<p><br /><br /></p>请输入正确的手机号码<p><br /></p>'
+                                                        , btn: '我知道了'
+                                                        , yes: function () {
+                                                            window.history.go(0);
+                                                        }
+                                                    });
+                                                }
+
                                             }
                                         });
                                     }

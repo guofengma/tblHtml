@@ -143,6 +143,7 @@
         }
         //触发事件
         function trigger() {
+            $('#addDoc').hide();
             //默认触发
             //下拉加载
             //页数

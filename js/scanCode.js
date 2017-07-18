@@ -23,7 +23,8 @@
                 console.log(data);
                 if (data.statusCode == 1) {
                     //获取数据成功；
-                    window.location.href = './scanOver.html';
+                    $('.say_name').text(data.obj.realName);
+                    // window.location.href = './scanOver.html';
                 } else if (data.statusCode == 0) {
                     //获取数据失败；
                     layer.open({
@@ -66,6 +67,7 @@
         $('#fastBtn').on('click', function () {
             userName = $('#docName').val();
             userTel = $('#docTel').val();
+            codeNum = $('#docCode').val();
             if (userName == '') {
                 layer.open({
                     content: '输入姓名不能为空'
@@ -85,7 +87,7 @@
                     , time: 2 //2秒后自动关闭
                 });
             } else {
-                getCodeNum(userTel);
+                getLogin();
             }
         });
         //取得验证码
@@ -129,7 +131,7 @@
                 data: {
                     'mobilephone': userTel,
                     'messageCode': codeNum,
-                    'employeeId': 1,//合伙人id从哪里获取
+                    'employeeId': openidTrue,//合伙人id从哪里获取
                     'name': userName//用户填写的医生名字
                 },
                 dataType: 'json',
@@ -138,7 +140,7 @@
                     console.log(data);
                     if (data.statusCode == 1) {
                         //获取数据成功；
-
+                        window.location.href = './scanOver.html'
                     } else if (data.statusCode == 0) {
                         //获取数据失败；
                         layer.open({
